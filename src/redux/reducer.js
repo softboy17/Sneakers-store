@@ -1,7 +1,8 @@
-import {FETCH_REQUEST_SNEAKERS_SUCCESS} from "../constants/type";
+import {FETCH_REQUEST_BRANDS_SUCCESS, FETCH_REQUEST_SNEAKERS_SUCCESS} from "../constants/type";
 
 const initialState = {
-    sneakers: []
+    sneakers: [],
+    brands: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 sneakers: action.payload
+            }
+        case FETCH_REQUEST_BRANDS_SUCCESS:
+            return {
+                ...state,
+                brands: action.payload
             }
         default:
             return state

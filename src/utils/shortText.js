@@ -1,6 +1,7 @@
 export function shortText(text) {
-    if (text.length > 80) {
-        return text.substring(0, 80) + '...';
+    let size = 80
+    if (text.length > size) {
+        return text.substring(0, size) + '...';
     } else {
         return text;
     }

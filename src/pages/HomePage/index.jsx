@@ -1,20 +1,10 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchSneakers} from "../../redux/action";
+import React from 'react';
 import Cards from "../../components/Cards";
 
 
 const HomePage = () => {
-    const sneakers = useSelector(state => state.sneakers);
-    const dispatch = useDispatch();
-
-    useEffect(() =>{
-        dispatch(fetchSneakers())
-    }, [])
-
-
     return (
-        <div className="container mx-auto">
+        <div>
             <Cards/>
         </div>
     );
