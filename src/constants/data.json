@@ -1,0 +1,167 @@
+[
+  {
+    "brand": "Adidas",
+    "model": "Ultra Boost",
+    "colorway": "Triple White",
+    "release_date": "2022-02-01",
+    "retail_price": 180,
+    "sizes": [
+      {
+        "size": "US 7",
+        "quantity": 10
+      },
+      {
+        "size": "US 8",
+        "quantity": 15
+      },
+      {
+        "size": "US 9",
+        "quantity": 20
+      },
+      {
+        "size": "US 10",
+        "quantity": 25
+      },
+      {
+        "size": "US 11",
+        "quantity": 30
+      },
+      {
+        "size": "US 12",
+        "quantity": 35
+      }
+    ]
+  },
+  {
+    "brand": "Nike",
+    "model": "Air Jordan 1",
+    "colorway": "Chicago",
+    "release_date": "2021-02-12",
+    "retail_price": 160,
+    "sizes": [
+      {
+        "size": "US 7",
+        "quantity": 5
+      },
+      {
+        "size": "US 8",
+        "quantity": 10
+      },
+      {
+        "size": "US 9",
+        "quantity": 15
+      },
+      {
+        "size": "US 10",
+        "quantity": 20
+      },
+      {
+        "size": "US 11",
+        "quantity": 25
+      },
+      {
+        "size": "US 12",
+        "quantity": 30
+      }
+    ]
+  },
+  {
+    "brand": "New Balance",
+    "model": "990v5",
+    "colorway": "Grey/White",
+    "release_date": "2020-07-01",
+    "retail_price": 175,
+    "sizes": [
+      {
+        "size": "US 7",
+        "quantity": 8
+      },
+      {
+        "size": "US 8",
+        "quantity": 12
+      },
+      {
+        "size": "US 9",
+        "quantity": 16
+      },
+      {
+        "size": "US 10",
+        "quantity": 20
+      },
+      {
+        "size": "US 11",
+        "quantity": 24
+      },
+      {
+        "size": "US 12",
+        "quantity": 28
+      }
+    ]
+  },
+  {
+    "brand": "Converse",
+    "model": "Chuck Taylor All-Star",
+    "colorway": "Black/White",
+    "release_date": "2021-03-15",
+    "retail_price": 55,
+    "sizes": [
+      {
+        "size": "US 7",
+        "quantity": 15
+      },
+      {
+        "size": "US 8",
+        "quantity": 20
+      },
+      {
+        "size": "US 9",
+        "quantity": 25
+      },
+      {
+        "size": "US 10",
+        "quantity": 30
+      },
+      {
+        "size": "US 11",
+        "quantity": 35
+      },
+      {
+        "size": "US 12",
+        "quantity": 40
+      }
+    ]
+  },
+  {
+    "brand": "Vans",
+    "model": "Old Skool",
+    "colorway": "Black/White",
+    "release_date": "2021-08-10",
+    "retail_price": 60,
+    "sizes": [
+      {
+        "size": "US 7",
+        "quantity": 12
+      },
+      {
+        "size": "US 8",
+        "quantity": 18
+      },
+      {
+        "size": "US 9",
+        "quantity": 24
+      },
+      {
+        "size": "US 10",
+        "quantity": 30
+      },
+      {
+        "size": "US 11",
+        "quantity": 36
+      },
+      {
+        "size": "US 12",
+        "quantity": 42
+      }
+    ]
+  }
+]
