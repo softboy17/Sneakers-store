@@ -10,7 +10,7 @@ const Cards = () => {
     }
 
     return (
-        <div className="flex flex-wrap -mx-4 my-[30px]">
+        <div className="w-[80%] mx-auto flex flex-wrap -mx-4 my-[30px]">
             {
                 sneakers.map(item => {
                     return <Card {...item}/>

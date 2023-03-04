@@ -3,7 +3,7 @@ import {shortText} from "../../utils/shortText";
 
 const Card = ({brand, model, color, price, description}) => {
     return (
-            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 h-[500px]">
+            <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
                 <div className="bg-gray-200 rounded-lg overflow-hidden">
                     <img src="https://via.placeholder.com/600x400" alt="" className="w-full"/>
                     <div className="px-4 py-4">
