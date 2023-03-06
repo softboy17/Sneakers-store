@@ -7,32 +7,16 @@ import {motion} from "framer-motion"
 
 
 const Header = () => {
+    const [showInput, setShowInput] = useState(false);
     const handleInput = (event) => {
         const value = event.target.value;
         const length = value.length;
-        const translateY = length * -2;
-        const opacity = length > 0 ? 0.5 : 1;
-        const scale = length > 0 ? 0.9 : 1;
-
-        setState({
-            translateY,
-            opacity,
-            scale
-        });
     };
 
-    const [state, setState] = useState({
-        translateY: 0,
-        opacity: 1,
-        scale: 1
-    });
-    const [showInput, setShowInput] = useState(false);
 
     const handleClick = () => {
-        setShowInput(prev => !prev);
-        console.log(handleClick())
+        setShowInput(!showInput);
     };
-
 
     return (
         <div className="bg-gray-500">
@@ -52,32 +36,31 @@ const Header = () => {
                 <div className='flex text-white items-center mx-[20px] justify-between w-[40%]'>
 
                     <div className='items-center flex-row flex '>
-                        {!showInput ? (
-                            <div className='items-center flex-col flex ' onClick={handleClick}>
-                                <MagnifyingGlass size={32}/>
-                                <span className='text-xs'>Поиск</span>
-                            </div>
-                        ) : (
-                            <div className=' flex items-center mx-[20px] text-black'>
-                                <motion.input
-                                    style={{
-                                        transform: `translateY(${state.translateY}px) scale(${state.scale})`,
-                                        opacity: state.opacity
-                                    }}
-                                    onChange={handleInput}
-                                    animate={{x: 0, opacity: 1}}
-                                    transition={{duration: 0.5, opacity: 0}}
-                                    initial={{x: 40}}
-                                    placeholder='Поиск'
-                                    type='text'
-                                    className='rounded border-solid border-2 border-zinc-700'/>
-                                <div className='items-center flex-col flex text-white ' onClick={handleClick}>
-                                    <MagnifyingGlass size={32}/>
-                                    <span className='text-xs'>Поиск</span>
-                                </div>
-                            </div>
-
-                        )}
+                        <motion.input
+                            onChange={handleInput}
+                            placeholder='Поиск'
+                            type='text'
+                            animate={{
+                                x: showInput ? 0 : '100%',
+                                opacity: showInput ? 1 : 0,
+                                transitionEnd: {
+                                    display: showInput ? 'block' : 'none',
+                                },
+                            }}
+                            transition={{ duration: 0.5, ease: 'easeInOut' }}
+                            initial={{ x: '100%', opacity: 0 }}
+                            exit={{
+                                x: '-100%',
+                                opacity: 0,
+                                transition: { duration: 0.5, ease: 'easeInOut' },
+                            }}
+                            animatePresence
+                            className={` rounded border-solid border-2 border-zinc-700`}
+                        />
+                        <motion.button  className='items-center flex-col flex ' onClick={handleClick}>
+                            <MagnifyingGlass size={32}/>
+                            <span className='text-xs'>Поиск</span>
+                        </motion.button>
                     </div>
                     <Link to={FAVORITES_PAGE}>
                         <div className='items-center flex-col flex'>
