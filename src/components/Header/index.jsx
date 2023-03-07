@@ -3,7 +3,7 @@ import {HeartStraight, MagnifyingGlass, ShoppingCart} from "phosphor-react";
 import {Link} from "react-router-dom";
 import {BASKET_PAGE, BRANDS_PAGE, FAVORITES_PAGE, HOME_PAGE} from "../../constants/route";
 import {motion} from "framer-motion"
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {searchTitle} from "../../redux/action";
 
 
@@ -14,7 +14,7 @@ const Header = () => {
 
     const handleInput = (event) => {
         const value = event.target.value;
-        const length = value.length;
+        // const length = value.length;
 
         setSearchText(value);
         dispatch(searchTitle(value));
