@@ -33,18 +33,19 @@ const Header = () => {
                         </nav>
                     </div>
                 </Link>
-                <div className='flex text-white items-center mx-[20px] justify-between w-[40%]'>
+                <div className='flex text-white items-center mx-[20px] justify-between w-[50%]'>
 
-                    <div className='items-center flex-row flex '>
-                        <motion.input
+                    <div className='items-center flex-row flex  '>
+                            <motion.input
                             onChange={handleInput}
                             placeholder='Поиск'
                             type='text'
                             animate={{
-                                x: showInput ? 0 : '100%',
+                                x: showInput ? 0 : '200%',
                                 opacity: showInput ? 1 : 0,
-                                transitionEnd: {
+                                transition: {
                                     display: showInput ? 'block' : 'none',
+                                    duration: 0.5, ease: 'easeInOut'
                                 },
                             }}
                             transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -55,8 +56,9 @@ const Header = () => {
                                 transition: { duration: 0.5, ease: 'easeInOut' },
                             }}
                             animatePresence
-                            className={` rounded border-solid border-2 border-zinc-700`}
+                            className={`w-full mr-5 p-4 pl-10 text-sm text-gray-900 border border-gray-600 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}
                         />
+
                         <motion.button  className='items-center flex-col flex ' onClick={handleClick}>
                             <MagnifyingGlass size={32}/>
                             <span className='text-xs'>Поиск</span>
