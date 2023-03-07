@@ -9,7 +9,6 @@ import {searchTitle} from "../../redux/action";
 
 const Header = () => {
     const [searchText, setSearchText] = useState('');
-    const sneakers = useSelector(state => state.sneakers);
     const [showInput, setShowInput] = useState(false);
     const dispatch = useDispatch();
 
@@ -25,7 +24,6 @@ const Header = () => {
         setShowInput(!showInput);
     };
 
-    console.log(sneakers);
 
     return (
         <div className="bg-gray-500">
