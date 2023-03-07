@@ -3,7 +3,7 @@ import {
     FETCH_REQUEST_BRANDS, FETCH_REQUEST_BRANDS_ERROR, FETCH_REQUEST_BRANDS_SUCCESS,
     FETCH_REQUEST_SNEAKERS,
     FETCH_REQUEST_SNEAKERS_ERROR,
-    FETCH_REQUEST_SNEAKERS_SUCCESS
+    FETCH_REQUEST_SNEAKERS_SUCCESS, SEARCH_TEXT
 } from "../constants/type";
 
 export const fetchSneakersRequest = () => {
@@ -29,6 +29,12 @@ export const fetchBrandsSuccess = (data) => {
 export const fetchBrandsError = () =>{
     return { type: FETCH_REQUEST_BRANDS_ERROR }
 }
+
+
+export const searchTitle = (value) => {
+    return { type: SEARCH_TEXT, payload: value }
+}
+
 
 export const fetchSneakers = () => {
     return dispatch => {
