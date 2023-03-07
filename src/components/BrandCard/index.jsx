@@ -1,10 +1,10 @@
 import React from 'react';
 
-const BrandCard = ({id, logoUrl, name, description}) => {
+const BrandCard = ({id, image, logoUrl, name, description}) => {
     return (
         <div className="border w-[45%] flex flex-col my-4 mx-2 bg-gray-300 font-monts-sans">
             <img
-                src="https://www.vectorkhazana.com/assets/images/products/Simpson_Nike_Svg.png"
+                src={image}
                 alt="img"
                 className="w-full h-[350px]"
             />
