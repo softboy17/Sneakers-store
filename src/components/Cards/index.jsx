@@ -13,7 +13,7 @@ const Cards = () => {
         <div className="w-[80%] mx-auto flex flex-wrap -mx-4 my-[30px]">
             {
                 sneakers.map(item => {
-                    return <Card {...item}/>
+                    return <Card key={item.id} {...item}/>
                 })
             }
         </div>
