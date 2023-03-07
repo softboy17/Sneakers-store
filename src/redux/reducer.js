@@ -2,7 +2,8 @@ import {FETCH_REQUEST_BRANDS_SUCCESS, FETCH_REQUEST_SNEAKERS_SUCCESS, SEARCH_TEX
 
 const initialState = {
     sneakers: [],
-    brands: []
+    brands: [],
+    filteredItems: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,9 +20,17 @@ const reducer = (state = initialState, action) => {
                 brands: action.payload
             }
         case SEARCH_TEXT:
+            const title = action.payload;
+            const filteredItems = state.sneakers.filter(item => {
+                if (item && item.brand) {
+                    return (item.brand.toLowerCase() + " " + item.model.toLowerCase()).includes(title.toLowerCase());
+                }
+                return false;
+            });
+
             return {
                 ...state,
-                sneakers: state.sneakers.filter(item => item && item.brand.toLowerCase() === action.payload.toLowerCase())
+                filteredItems,
             }
         default:
             return state
