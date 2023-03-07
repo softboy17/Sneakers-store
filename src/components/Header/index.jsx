@@ -4,19 +4,29 @@ import {HeartStraight, MagnifyingGlass, ShoppingCart} from "phosphor-react";
 import {Link} from "react-router-dom";
 import {BASKET_PAGE, BRANDS_PAGE, FAVORITES_PAGE, HOME_PAGE} from "../../constants/route";
 import {motion} from "framer-motion"
+import {useDispatch, useSelector} from "react-redux";
+import {searchTitle} from "../../redux/action";
 
 
 const Header = () => {
+    const [searchText, setSearchText] = useState('');
+    const sneakers = useSelector(state => state.sneakers);
     const [showInput, setShowInput] = useState(false);
+    const dispatch = useDispatch();
+
     const handleInput = (event) => {
         const value = event.target.value;
         const length = value.length;
-    };
 
+        setSearchText(value);
+        dispatch(searchTitle(value));
+    };
 
     const handleClick = () => {
         setShowInput(!showInput);
     };
+
+    console.log(sneakers);
 
     return (
         <div className="bg-gray-500">
@@ -34,10 +44,10 @@ const Header = () => {
                     </div>
                 </Link>
                 <div className='flex text-white items-center mx-[20px] justify-between w-[40%]'>
-
                     <div className='items-center flex-row flex '>
                         <motion.input
                             onChange={handleInput}
+                            value={searchText}
                             placeholder='Поиск'
                             type='text'
                             animate={{
@@ -55,7 +65,7 @@ const Header = () => {
                                 transition: { duration: 0.5, ease: 'easeInOut' },
                             }}
                             animatePresence
-                            className={` rounded border-solid border-2 border-zinc-700`}
+                            className={`rounded border-solid border-2 border-zinc-700 text-black`}
                         />
                         <motion.button  className='items-center flex-col flex ' onClick={handleClick}>
                             <MagnifyingGlass size={32}/>
